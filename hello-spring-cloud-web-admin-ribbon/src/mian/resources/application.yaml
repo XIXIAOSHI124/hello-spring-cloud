@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: hello-spring-cloud-web-admin-ribbon
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+  zipkin:
+    base-url: http://localhost:9411
+
+server:
+  port: 8280
+  hostname: localhost
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8080/eureka/

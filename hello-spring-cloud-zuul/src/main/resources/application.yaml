@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: hello-spring-cloud-zuul
+  zipkin:
+    base-url: http://localhost:9411
+
+server:
+  port: 8480
+  hostname: localhost
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8080/eureka/
+
+zuul:
+  routes:
+    api-ribbon:
+      path: /api/ribbon/**
+      serviceId: hello-spring-cloud-web-admin-ribbon
+    api-feign:
+      path: /api/feign/**
+      serviceId: hello-spring-cloud-web-admin-feign
