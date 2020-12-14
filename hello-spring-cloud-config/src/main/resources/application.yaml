@@ -1,6 +1,10 @@
 spring:
   application:
     name: hello-spring-cloud-config
+  boot:
+    admin:
+      client:
+        url: http://localhost:8580
   cloud:
     config:
       label: main
